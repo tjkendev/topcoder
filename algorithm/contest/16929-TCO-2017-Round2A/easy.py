@@ -4,8 +4,7 @@
 # - 全てのcherryとstrawberryを使い切る
 # - 焼くcakeの数は任意の正の整数
 # - 異なるcakeは異なる量のcherryとstrawberryを使う
-# - 各cakeは少なくとも一つのcherryとstrawberryを使う
-# - 各cakeに使うcherryとstrawberryの数は互いに素にならないようにする
+# - 各cakeは少なくとも一つのcherryとstrawberryを使う # - 各cakeに使うcherryとstrawberryの数は互いに素にならないようにする
 # 以上の条件を満たすcherryとstrawberryの分け方が存在する場合は"Possible"、
 # それ以外の場合は"Impossible"を出力せよ。
 class FoxAndCake2:
@@ -23,10 +22,12 @@ class FoxAndCake2:
             if c >= 5 and s >= 5:
                 return p
         if c % 2 == 1 and s % 2 == 0:
-            # (odd, even) => (5, 8)以上であれば(3, 6) + (event, event)という分け方が存在
+            # (odd, even) => (5, 8)以上であれば(3, 6) + (even, even)という分け方が存在
             if c >= 5 and s >= 8:
                 return p
         if c % 2 == 0 and s % 2 == 1:
+            # (even, odd)
             if c >= 8 and s >= 5:
                 return p
+        # otherwise => "Impossible"
         return q
